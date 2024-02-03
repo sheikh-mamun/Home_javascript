@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // Get user input for three numbers
+const number1 = parseFloat(prompt('Enter the first number:'));
+const number2 = parseFloat(prompt('Enter the second number:'));
+const number3 = parseFloat(prompt('Enter the third number:'));
+
+// Put the numbers in an array
+const numbers = [number1, number2, number3];
+
+// Sort the array in ascending order
+numbers.sort((a, b) => a - b);
+
+// Display the sorted numbers
+document.write('Sorted numbers in ascending order:', numbers);
+
+
+
+    </script>
+    
+</body>
+</html>

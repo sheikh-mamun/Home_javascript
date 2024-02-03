@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // var number  = parseFloat(prompt('please enter your number'));
+        var n =[4,5,8,56,78,3,4]
+        large = n[0];
+        small =n [0];
+        sum = n[0];
+        
+        for( i=0; i<n.length; i++){
+            if (small>n){
+                small=n[i];
+            }
+            if(large<n[i]){
+                large = n[i];
+            }
+            sum += n[i];
+        }
+       
+        
+        document.write("Small number :" + small + '<br/>');
+        document.write("large number :" + large + '<br/>');
+        document.write("Total number :" + sum );
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
