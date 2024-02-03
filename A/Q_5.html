@@ -23,6 +23,33 @@
 // // Display the sorted numbers
 // document.write('Sorted numbers in descending order: ' , numbers);
 
+
+
+let num1 = parseFloat(prompt("Enter the first number:"));
+let num2 = parseFloat(prompt("Enter the second number:"));
+let num3 = parseFloat(prompt("Enter the third number:"));
+
+if (num1 >= num2 && num1 >= num3) {
+    if (num2 >= num3) {
+        document.write("Descending Order: " + num1 + ", " + num2 + ", " + num3);
+    } else {
+        document.write("Descending Order: " + num1 + ", " + num3 + ", " + num2);
+    }
+} else if (num2 >= num1 && num2 >= num3) {
+    if (num1 >= num3) {
+        document.write("Descending Order: " + num2 + ", " + num1 + ", " + num3);
+    } else {
+        document.write("Descending Order: " + num2 + ", " + num3 + ", " + num1);
+    }
+} else {
+    if (num1 >= num2) {
+        document.write("Descending Order: " + num3 + ", " + num1 + ", " + num2);
+    } else {
+        document.write("Descending Order: " + num3 + ", " + num2 + ", " + num1);
+    }
+}
+
+
    
     </script>
     
