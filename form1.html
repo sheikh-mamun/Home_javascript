@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+  <form action="#" method="post" name="f" style="width:400px; margin:0px auto; border:1px solid gray; padding:10px">
+    <!-- <fieldset> -->
+      <legend> User personal Information</legend>
+      <level>Name:</level>
+      <input type="text" placeholder="Enter your name" name="txtName">
+      <br>
+      <br>
+      <level>Address:</level>
+      <br> 
+      <textarea name="txtAddress"></textarea> <br>
+      <br>
+      
+      <br>
+      <level>Gender:</level>
+      <input type="radio" name="html" id="j" name="rdoSex" value="Male">
+      <level for="j">Female</level>
+      
+      <input type="radio" name="html" id="k" name="rdoSex" value="Female">
+      <level for="k">Male</level>
+      
+      <input type="radio" name="html" id="O" name="rdoSex" value="Other">
+      <level for="O">Other</level>
+      <br>
+      
+      <br>
+      <div>Course<br/>
+        <select name="txtCourse" >
+          <option value="MBA">MBA</option>
+          <option value="BBA">BBA</option>
+          <option value="CIS">CIS</option>
+          <option value="EEE">EEE</option>
+        </select>
+        </div>
+        <div>Subject<br/>
+          English<input type="checkbox" value="English" name="chkSubject" />
+          Bengali<input type="checkbox" value="Bengali" name="chkSubject" />
+          
+           Math<input type="checkbox" value="Math" name="chkSubject" />
+         </div>
+         
+        
+     
+      
+      <br>
+      <br>
+      <level>Group:</level>
+      <select>
+      <option>Arts</option>
+      <option>Commerce</option>
+      <option>Science</option>
+      </select>
+      <br>
+      
+      <br>
+      <level>Date of birth:</level>
+      <input type="date" id="birthday" name="birtday">
+      <br>
+      
+      <br>
+      <level>Contact number:</level><br>
+      <input type="number" placeholder="Please Enter your name">
+      <br>
+      <br>
+      <level>Email:</level><br>
+      <input type="text" placeholder="Please Enter your email">
+      <br>
+      <br>
+      
+      <input type="button" value="Submit">
+      
+
+    
+    
+    
+    </fieldset>
+  </form>
+  </div>
+</body>
+
+<script language="javascript">
+ 
+  function dyn_window(){  
+    
+    var title="My Title";
+    
+    var name=document.f.txtName.value;
+    var address=document.f.txtAddress.value;
+    var course=document.f.txtCourse.value;
+    
+    var sex="";
+    var subject="";
+    
+    //check if radio button is selected and read selected value 
+    for (i=0;i<document.f.rdoSex.length;i++) {
+       if (document.f.rdoSex[i].checked) {
+      sex = document.f.rdoSex[i].value;
+      }
+      }
+    
+    for(j=0;j<document.f.chkSubject.length;j++){
+    
+      if (document.f.chkSubject[j].checked) {
+        subject+=document.f.chkSubject[j].value+", ";
+        }
+    }
+    
+   
+     // create new window here
+    
+      a=open('','','width=400px,height=400px')
+    
+    with(a.document){
+      write("<html>");
+      write("<head><title>"+title+"</title></head>");
+      write("<body>");
+      
+      write("<div style='border:1px solid gray'>Name:"+name+"<br/>");
+      write("Address:"+address+"<br/>");
+      write("Course:"+course+"<br/>");
+      write("Sex:"+sex+"<br/>");
+      write("Subject:"+subject+"<br/></div>");
+      write("<input type='button' value='Close me' onclick='self.close();' />");
+      write("<input type='button' value='Print' onclick='self.print();' />");
+      write("</body>");
+      write("</html>");
+    }
+     
+  }// end the function 
+   
+   
+  </script>
+
+</html>
