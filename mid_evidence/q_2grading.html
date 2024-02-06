@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grade</title>
+</head>
+<body>
+    <h2 style="background-color: gray;">Your GPA Score</h2>
+    <hr>
+
+    <script>
+
+let score = parseInt(prompt("Enter your score"));
+
+switch (true) {
+   case (score >= 80 && score <= 100):
+       document.write("Your Result: " + '<h2>"A+"</h2>');
+       break;
+
+   case (score >= 70 && score <= 79):
+       document.write("Your Result: " + '<h2>"A"</h2>');
+       break;
+
+   case (score >= 60 && score <= 69):
+       document.write("Your Result: " + '<h2>"B"</h2>');
+       break;
+
+    case (score > 100):
+        alert('Do n,t enter above 100');
+        break;
+
+    default:
+        document.write("Your Result: " + '<h2>"Fail"</h2>');
+   
+
+}
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
