@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+</head>
+<body>
+
+
+    <script>
+
+        class car {
+            constructor(name,color,barand){
+                this.name= name;
+                this.color = color;
+                this.barand = barand
+            }
+            show (){
+                return this.name + " " + this.color+ "" + " and this car is brand name "+ this.barand;
+            }
+               
+        }
+
+        let newcar = new car ("Bmw","Blue", "rx-70");
+        let b = new car("Audi","black", "jk-100");
+        a =newcar.show();
+        d =b.show();
+        
+        document.write(a + "<br>");
+        document.write(d);
+
+
+
+
+    //     new car()
+    //    const a = new car
+    //    const b = new car("audi","black", "jk");
+
+    //     document.write(a.name + " " +a.color+ " " + a.barand+ "<br>");
+    //     document.write(b.name+ " " + b.color+ " " + b.barand+ "<br>");
+
+
+
+
+    </script>
+    
+</body>
+</html>

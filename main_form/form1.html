@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form</title>
+</head>
+<body>
+  <div>
+  <form name="f" style="width:400px; margin:0px auto; border:1px solid gray; padding:10px">
+    <!-- <fieldset> -->
+      <legend> User personal Information</legend>
+      <hr>
+      <br>
+      <level>Name:</level>
+      <input type="text" placeholder="Enter your name" name="txtName">
+      <br>
+      <br>
+      <level>Address:</level>
+      <br> 
+      <textarea name="txtAddress"></textarea> <br>
+      <br>
+      
+      <input type="button" onclick="dyn_window ()" value="Submit" />
+      
+      </fieldset>
+    </form>
+    </div>
+  </body>
+      
+
+<script language="javascript">
+ 
+  function dyn_window(){  
+    
+    var title="My Title";
+    
+    var name =document.f.txtName.value;
+    var address =document.f.txtAddress.value;
+    
+    
+    
+    
+   
+     // create new window here
+    
+      a=open('','','width=400px,height=400px')
+    
+    with(a.document){
+    write("<html>");
+    write("<head><title>"+title+"</title></head>");
+    write("<body>");
+    
+    write("<div style='border:4px solid gray'>Name:"+name+"<br/>");
+    write( "address: " + address);
+    }
+     
+  }// end the function 
+   
+   
+  </script>
+</html>
+
+      
+     
+      
+      
+      
+      
+      
+      
+      
+      
+     
+
+    
+    
