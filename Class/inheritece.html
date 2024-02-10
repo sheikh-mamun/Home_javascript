@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class Player {
+          name;
+          age;
+      
+          constructor(name, age) {
+            this.name = name;
+            this.age = age;
+          }
+      
+          getPlayerDetails() {
+            return `${this.name} is ${this.age} years old`;
+          }
+        }
+      
+        class Cricketer extends Player {
+          #centuries;
+      
+          constructor(name, age, centuries) {
+            super(name, age);
+            this.#centuries = centuries;
+          }
+      
+          getPlayerDetails() {
+            return super.getPlayerDetails() + ` and has scored ${this.#centuries} centuries`;
+          }
+        }
+      
+        class Footballer extends Player {
+          #goals;
+      
+          constructor(name, age, goals) {
+            super(name, age);
+            this.#goals = goals;
+          }
+      
+          getFootballerDetails() {
+            return super.getPlayerDetails() + ` and has scored ${this.#goals} goals`;
+          }
+        }
+
+        class Badmintoner extends Player {
+          #win;
+      
+          constructor(name, age, win) {
+            super(name, age);
+            this.win = win;
+          }
+      
+          getFootballerDetails() {
+            return super.getPlayerDetails() + ` and has scored ${this.win} win`;
+          }
+        }
+
+
+        class Wresler extends Player {
+          #win;
+      
+          constructor(name, age, win) {
+            super(name, age);
+            this.win = win;
+          }
+      
+          getFootballerDetails() {
+            return super.getPlayerDetails() + ` and has scored ${this.win} win`;
+          }
+        }
+
+        
+        class Walker extends Player {
+          #win;
+      
+          constructor(name, age, win) {
+            super(name, age);
+            this.win = win;
+          }
+      
+          getFootballerDetails() {
+            return super.getPlayerDetails() + ` and has scored ${this.win} win`;
+          }
+        }
+
+        
+        class Cycler extends Player {
+          #win;
+      
+          constructor(name, age, win) {
+            super(name, age);
+            this.win = win;
+          }
+      
+          getFootballerDetails() {
+            return super.getPlayerDetails() + ` and has scored ${this.win} win`;
+          }
+        }
+
+        
+
+      
+        const Sakib = new Cricketer("Sakib", 36, 15);
+        const Messi = new Footballer("Messi", 40, 400);
+        const Mamun = new Badmintoner("Mamun", 25, 600);
+        const Brusli = new Wresler("Brusli", 25, 70);
+        const Karim = new Walker("Karim", 30, 200);
+        const Foisal = new Cycler("Foisal", 30, 150);
+      
+        document.write(Sakib.getPlayerDetails());
+        document.write("<br>");
+        document.write(Messi.getFootballerDetails());
+        document.write("<br>");
+        document.write(Mamun.getFootballerDetails());
+        document.write("<br>");
+        document.write(Brusli.getFootballerDetails());
+        document.write("<br>");
+        document.write(Karim.getFootballerDetails());
+        document.write("<br>");
+        document.write(Foisal.getFootballerDetails());
+      
+      </script>
+      
+
+
+    
+</body>
+</html>

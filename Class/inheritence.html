@@ -13,6 +13,8 @@
   <script>
 
     class Player {
+      name
+      age
 
       constructor(name,age){
         this.name = name;
@@ -21,7 +23,7 @@
       }
 
       getPlayerDetails(){
-        return `${this.name} is ${this.age} years old`;
+        return `${this.name} is ${this.age} years old and his centuries ${this.centuries}`;
       }
 
      
@@ -47,10 +49,10 @@
 }
 
 const Sakib = new Crickter ("Sakib",36,15);
-const Messi = new Crickter ("Messi",40,400);
+const Messi = new Footballer ("Messi",40,400);
 
 
-document.write(Messi.getPlayerDetails());
+document.write(Sakib.getPlayerDetails());
 
 
 
