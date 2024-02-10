@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inheritence</title>
+</head>
+<body>
+
+
+
+
+  <script>
+
+    class Player {
+
+      constructor(name,age){
+        this.name = name;
+        this.age = age;
+
+      }
+
+      getPlayerDetails(){
+        return `${this.name} is ${this.age} years old`;
+      }
+
+     
+    }
+
+    class Crickter extends Player{
+
+      constructor(name,age,centuries){
+        super(name,age);
+        this.centuries = centuries;
+
+      }
+    }
+
+    
+  class Footballer extends Player{
+    #goals
+    constructor(name,age,goals){
+      super(name,age);
+      this.#goals = goals;
+
+}
+}
+
+const Sakib = new Crickter ("Sakib",36,15);
+const Messi = new Crickter ("Messi",40,400);
+
+
+document.write(Messi.getPlayerDetails());
+
+
+
+  
+
+
+   
+
+
+  </script>
+  
+</body>
+</html>
