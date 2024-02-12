@@ -36,12 +36,12 @@
           }
         }
       
-        class Footballer extends Player {
+        class Footballer extends Cricketer {
           #goals;
       
-          constructor(name, age, goals) {
-            super(name, age);
-            this.#goals = goals;
+          constructor(name, age,centuries) {
+            super(name, age, centuries);
+            // this.#goals = goals;
           }
       
           getFootballerDetails() {
