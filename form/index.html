@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: teal;
+            
+        }
+
+        form {
+            width: 400px;
+            height: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgb(204, 201, 194);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          
+           
+            
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<form id="registrationForm">
+  <h2 class="title" style="text-align: center;">Create a new account</h2>
+  <hr>
+
+  <br>
+  <br>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter your full name" name="username" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+    <label for="passwordConfirmation">Confirm Password:</label>
+    <input type="password" id="passwordConfirmation" name="passwordConfirmation" placeholder="Enter your Confirm password" required>
+    <br>
+    <br>
+
+    <button type="button" onclick="registerUser()" style="margin-left: 287px;" text>Create Account</button>
+
+    <div id="errorMessages" class="error"></div>
+</form>
+
+<script>
+class User {
+    constructor(username, email, password, passwordConfirmation) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.passwordConfirmation = passwordConfirmation;
+        this.errors = [];
+    }
+
+    validateEmail() {
+        if (!this.email.includes('@') || !this.email.includes('.')) {
+          this.setStatus("Please enter valid email address", "error")
+        }
+    }
+
+    validatePassword() {
+        if (this.password.length < 8) {
+            this.errors.push("Password must be at least 8 characters long");
+        }
+
+        if (this.password !== this.passwordConfirmation) {
+            this.errors.push("Password and confirmation do not match");
+        }
+    }
+
+    registerUser() {
+        this.errors = [];
+        this.validateEmail();
+        this.validatePassword();
+
+        if (this.errors.length === 0) {
+            alert("User registration successful");
+            // Perform registration logic (e.g., send data to server)
+        } else {
+            const errorMessages = document.getElementById("errorMessages");
+            errorMessages.innerHTML = this.errors.join("<br>");
+        }
+    }
+}
+
+function registerUser() {
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const passwordConfirmation = document.getElementById("passwordConfirmation").value;
+
+    const user = new User(username, email, password, passwordConfirmation);
+    user.registerUser();
+}
+</script>
+
+</body>
+</html>
+
