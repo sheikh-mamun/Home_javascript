@@ -20,7 +20,7 @@
             height: 600px;
             padding: 20px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             background-color: rgb(178, 189, 189);
         }
@@ -76,16 +76,16 @@
 
     <label for="course">Course:</label>
     <select id="course" name="course" required>
-        <option value="math">WDPF</option>
-        <option value="science">C#</option>
-        <option value="history">JAVA</option>
-        <option value="history">DATABASE</option>
-        <option value="history">GRAPIC-DEISGN</option>
+        <option value="WDPF">WDPF</option>
+        <option value="C#">C#</option>
+        <option value="JAVA">JAVA</option>
+        <option value="DATABASE">DATABASE</option>
+        <option value="GRAPIC-DEISGN">GRAPIC-DEISGN</option>
     </select>
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
-
+   
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
@@ -93,8 +93,8 @@
     <input type="password" id="passwordConfirmation" name="passwordConfirmation" placeholder="Enter your password" required>
 
     <button type="button" onclick="openDynamicWindow()" style="margin-left: 287px;">Create Account</button>
-
     <div id="errorMessages" class="error"></div>
+    
 </form>
 
 <script>
@@ -111,7 +111,7 @@ class User {
     }
 
     validateEmail() {
-    // একটি সাধারিত ইমেইল পরীক্ষা করার রেগুলার এক্সপ্রেশন
+    // একটি সাধারন ইমেইল পরীক্ষা করার রেগুলার এক্সপ্রেশন
     const emailRegex = /\S+@\S+\.\S+/;
 
     // পরীক্ষা করে দেখা যাবে কি না
@@ -125,7 +125,7 @@ class User {
         this.errors.push("Password must be 8 characters long");
     }
 
-    // অতিরিক্ত শর্তগুলি যোগ করুন
+    // অতিরিক্ত শর্তগুলি 
     if (!/[a-zA-Z]/.test(this.password)) {
         this.errors.push("Password must contain one character");
     }
@@ -168,7 +168,7 @@ function openDynamicWindow() {
     user.registerUser();
 
     // Open dynamic window (you can customize the window features as needed)
-    const dynamicWindow = window.open('', '_blank', 'width=400,height=400');
+    const dynamicWindow = window.open('', ' ', 'width=400,height=400');
     dynamicWindow.document.write(`<h2>Registration Details</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Address:</strong> ${address}</p>
