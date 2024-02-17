@@ -17,7 +17,7 @@
 
         form {
             width: 400px;
-            height: 604px;
+            height: 640px;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
@@ -85,15 +85,19 @@
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+    <div id="emailError" class="error"></div>
    
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    <div id="passwordError" class="error"></div>
 
     <label for="passwordConfirmation">Confirm Password:</label>
     <input type="password" id="passwordConfirmation" name="passwordConfirmation" placeholder="Enter your password" required>
-    <button type="button" onclick="openDynamicWindow()" style="margin-left: 287px;">Create Account</button>
-    <div id="errorMessages" class="error"></div>
+    <br>
+    <br>
 
+    <button type="button" onclick="openDynamicWindow()" style="margin-left: 287px;">Create Account</button>
+    <!-- <div id="errorMessages" class="error"></div> -->
     
 </form>
 
@@ -111,39 +115,45 @@ class User {
     }
 
     validateEmail() {
-    // একটি সাধারন ইমেইল পরীক্ষা করার রেগুলার এক্সপ্রেশন
-    const emailRegex = /\S+@\S+\.\S+/;
+        // একটি সাধারণ ইমেইল পরীক্ষা করার রেগুলার এক্সপ্রেশন
+        const emailRegex = /\S+@\S+\.\S+/;
 
-    // পরীক্ষা করে দেখা যাবে কি না
-    if (!emailRegex.test(this.email)) {
-        this.errors.push("Invalid email address");
-    }
-}
-
-  validatePassword() {
-    if (this.password.length < 8) {
-        this.errors.push("Password must be 8 characters long");
+        // পরীক্ষা করে দেখা যাবে কি না
+        if (!emailRegex.test(this.email)) {
+            this.errors.push("Invalid email address");
+        }
     }
 
-    // অতিরিক্ত শর্তগুলি 
-    if (!/[a-zA-Z]/.test(this.password)) {
-        this.errors.push("Password must contain one character");
-    }
+    validatePassword() {
+        if (this.password.length < 8) {
+            this.errors.push("Password must be 8 characters long");
+        }
 
-    if (!/\d/.test(this.password)) {
-        this.errors.push("Password must contain a number");
-    }
+        // অতিরিক্ত শর্তগুলি 
+        if (!/[a-zA-Z]/.test(this.password)) {
+            this.errors.push("Password must contain one character");
+        }
 
-    if (this.password !== this.passwordConfirmation) {
-        this.errors.push("Password and confirmation do not match");
-    }
-}
+        if (!/\d/.test(this.password)) {
+            this.errors.push("Password must contain a number");
+        }
 
+        if (this.password !== this.passwordConfirmation) {
+            this.errors.push("Password and confirmation do not match");
+        }
+    }
 
     registerUser() {
         this.errors = [];
         this.validateEmail();
         this.validatePassword();
+
+        // ইমেইল এবং পাসওয়ার্ডের নিচে ত্রুটি মেসেজ দেখানো
+        const emailError = document.getElementById("emailError");
+        const passwordError = document.getElementById("passwordError");
+
+        emailError.innerHTML = this.errors.find(error => error.includes("email")) || "";
+        passwordError.innerHTML = this.errors.find(error => error.includes("Password")) || "";
 
         if (this.errors.length === 0) {
             alert("User registration successful");
